@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="students_form" model="ir.ui.view">
+        <field name="name">todos.view.form</field>
+        <field name="model">todos.students</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <group name="group_1">
+                            <field name="name"></field>
+                            <field name="regi_no"></field>
+                            <field name="mobile"></field>
+                        </group>
+                        <group name="group_2">
+                            <field name="department_id"></field>
+                            <field name="course_ids"></field>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="students_view_tree" model="ir.ui.view">
+        <field name="name">students.view.tree</field>
+        <field name="model">todos.students</field>
+        <field name="arch" type="xml">
+            <tree string="" limit="20">
+                <field name="name"></field>
+                <field name="regi_no"></field>
+                <field name="mobile"></field>
+                <field name="department_id"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record id="students_view_search" model="ir.ui.view">
+        <field name="name">students.view.search</field>
+        <field name="model">todos.students</field>
+        <field name="arch" type="xml">
+            <search>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="students_action" model="ir.actions.act_window">
+        <field name="name">Students</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">todos.students</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+
+    </record>
+
+
+    <menuitem
+            id="todos_students"
+            name="Students"
+            parent="todos.menu_root"
+            action="students_action"
+            sequence="10"
+    />
+</odoo>

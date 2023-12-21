@@ -1,0 +1,20 @@
+<odoo>
+    <data>
+          <template id="todos.test_todo" name="New Task">
+            <t t-call="website.layout">
+                <t t-set="title">Task</t>
+                <t t-set="head">
+                    <t t-call-assets="web.assets_common"/>
+                    <t t-call-assets="web.assets_frontend"/>
+                    <t t-call-assets="todos.assets_todo"/>
+                </t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <div id="tset_todo" />
+                    </div>
+                </div>
+            </t>
+            
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+          <template id="todos.update_student" name="Add Student">
+            <t t-call="website.layout">
+                <t t-set="title">Update Student</t>
+                <t t-set="head">
+                    <t t-call-assets="web.assets_common"/>
+                    <t t-call-assets="web.assets_frontend"/>
+                    <t t-call-assets="todos.assets_update"/>
+                </t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <div id="update" t-att-data-student-id="id"/>
+                    </div>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+todos.access_todos_todo,access_todos_todo,todos.model_todos_todo,base.group_user,1,1,1,1
+todos.access_todos_course,access_todos_course,todos.model_todos_course,base.group_user,1,1,1,1
+todos.access_todos_department,access_todos_department,todos.model_todos_department,base.group_user,1,1,1,1
+todos.access_todos_students,access_todos_students,todos.model_todos_students,base.group_user,1,1,1,1

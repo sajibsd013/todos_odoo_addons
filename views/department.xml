@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="department_form" model="ir.ui.view">
+        <field name="name">department.view.form</field>
+        <field name="model">todos.department</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <group name="group_1">
+                            <field name="name"></field>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="department_view_tree" model="ir.ui.view">
+        <field name="name">department.view.tree</field>
+        <field name="model">todos.department</field>
+        <field name="arch" type="xml">
+            <tree string="" limit="20">
+                <field name="name"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record id="department_view_search" model="ir.ui.view">
+        <field name="name">department.view.search</field>
+        <field name="model">todos.department</field>
+        <field name="arch" type="xml">
+            <search>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="department_action" model="ir.actions.act_window">
+        <field name="name">department</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">todos.department</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+
+    </record>
+
+
+    <menuitem
+            id="todos_department_action"
+            name="Department"
+            parent="todos.menu_root"
+            action="department_action"
+            sequence="10"
+    />
+</odoo>

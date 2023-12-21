@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="todos.update_student" owl="1">
+        <div class="container">
+            <div class="col-md-9 mx-auto my-5 p-4 shadow-sm border">
+                <form class="col-md-8 mx-auto" t-on-submit.prevent="updateStudent">
+                  <h5 class="mb-3 text-center">Update Student</h5>
+                    <div class="mb-3">
+                  <label class="form-label">Student name</label>
+                        <input class="form-control form-control-sm" t-model="state.student.name"/>
+                </div>
+                    <div class="mb-3">
+                  <label class="form-label">Regi No.</label>
+                        <input class="form-control form-control-sm" t-model="state.student.regi_no"/>
+                </div>
+                    <div class="mb-3">
+                  <label class="form-label">Mobile</label>
+                        <input class="form-control form-control-sm" t-model="state.student.mobile"/>
+                </div>
+                    <div class="mb-3">
+                      <label class="form-label">Department</label>
+                        <select class="form-select" aria-label="Default select example"
+                                t-model="state.student.department_id" t-on-change="onDeptChange">
+                             <option value="">Select Department</option>
+                            <t t-foreach="state.department" t-as="dept" t-key="dept.id">
+                              <option t-att-value="dept.id" t-att-selected="state.student.department_id==dept.id"
+                                      t-esc="dept.name"></option>
+                            </t>
+                    </select>
+                </div>
+                    <div class="mb-3" t-if="state.courses.length">
+                      <label class="form-label">Course</label>
+                        <div class="d-flex flex-wrap">
+
+                        <div t-foreach="state.courses" t-as="course" t-key="course.id" class="me-2">
+                            <div class="form-check ">
+                              <input class="form-check-input" type="checkbox"
+                                     t-att-id="course.id" t-att-checked="state.student.course_ids.includes(course.id)"
+                                     t-on-change="(e)=>onCourseChange(e,course.id)"/>
+                                <label class="form-check-label" t-att-for="course.id" t-esc="course.name">
+                              </label>
+                             </div>
+                        </div>
+                        </div>
+
+                    </div>
+                    <button class="btn btn-success" type="submit">
+                        Update Student
+                    </button>
+              </form>
+            </div>
+        </div>
+    </t>
+</templates>

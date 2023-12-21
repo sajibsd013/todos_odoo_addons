@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+          <template id="todos.student_sec" name="Students">
+            <t t-call="website.layout">
+                <t t-set="title">Students</t>
+                <t t-set="head">
+                    <t t-call-assets="web.assets_common"/>
+                    <t t-call-assets="web.assets_frontend"/>
+                    <t t-call-assets="todos.assets_students"/>
+                </t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <div id="student" />
+                    </div>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+        <record id="menu_todo_website" model="website.menu">
+            <field name="name">ToDos</field>
+            <field name="url">/todos</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence">55</field>
+        </record>
+        <record id="menu_student_website" model="website.menu">
+            <field name="name">Students</field>
+            <field name="url">/students</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence">55</field>
+        </record>
+    </data>
+
+    <menuitem
+            id="todos.menu_root"
+            name="Todo "
+            sequence="1"
+    />
+
+</odoo>

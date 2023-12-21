@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="todos.student_sec" owl="1">
+        <div class="container">
+        <div class="col-md-9 mx-auto my-5 p-4 shadow-sm border">
+          <div class="d-flex justify-content-between">
+            <h5 class="mb-3">Students</h5>
+              <div class="">
+                <a href="/students/add" class="btn btn-sm btn-outline-dark">Add Student</a>
+              </div>
+          </div>
+            <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Name</th>
+                        <th scope="col">Mobile</th>
+                        <th scope="col">Regi No</th>
+                        <th scope="col">Dept</th>
+                        <th scope="col">Course</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                <tbody>
+                      <t t-foreach="state.students" t-as="student" t-key="student.id">
+                        <tr>
+                          <td><t t-esc="student.name" /></td>
+                            <td><t t-esc="student.mobile" /></td>
+                            <td><t t-esc="student.regi_no" /></td>
+                            <td><t t-esc="student.department_id[1]" /></td>
+                            <td>
+                              <t t-foreach="student.course_names" t-as="course" t-key="course.id">
+                                  <t t-esc="course.name"/>,
+                                </t>
+
+                          </td>
+                            <td>
+                                 <a t-att-href="`/students/update/${student.id}`" class="btn btn-sm btn-primary me-2">EDIT</a>
+                                <button class="btn btn-sm btn-danger" t-on-click="()=>deleteStudent(student.id)">DELETE</button>
+                            </td>
+                        </tr>
+                        </t>
+
+
+                  </tbody>
+                </table>
+        </div>
+        </div>
+
+
+    </t>
+</templates>
